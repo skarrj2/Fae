@@ -6,7 +6,7 @@
 		H.add_spell(/datum/action/cooldown/spell/undirected/touch/prestidigitation)
 		H.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
 		H.adjust_spell_points(4)
-
+if(biter.patron.type != /datum/patron/inhumen/graggar)
 /datum/species/faery
 	name = "Faery"
 	id = SPEC_ID_FAERY
@@ -22,7 +22,7 @@
 	‣ The <b>Seelie Court</b> comprises faeries that seek help from others, warn those who have accidentally offended them, and return kindness with favors of their own. Still, a faery belonging to this court will avenge insults and could be prone to mischief.
 	‣ The <b>Unseelie Court</b> describes the darkly-inclined fairies. Unlike the Seelie Court, no offense was deemed necessary to bring down their assaults. They are seen as closely allied with Zizo.
 
-	skin_tone_wording = "Elemental Connection"
+	skin_tone_wording = "Fey Court"
 
 	exotic_bloodtype = /datum/blood_type/fey
 
@@ -31,8 +31,8 @@
 	//default_features = MANDATORY_FEATURE_LIST
 	inherent_skills = list(
 		/datum/skill/misc/sneaking = 3,
-		/datum/skill/misc/stealing = 1,
 		/datum/skill/labor/taming = 2,
+		/datum/skill/misc/stealing = 1,
 )
 
 	use_skintones = 1
@@ -61,11 +61,9 @@
 		OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
 		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0), \
 		)
-	specstats_m = list(STATKEY_STR = -4, STATKEY_PER = -2, STATKEY_INT = -2, STATKEY_CON = -4, STATKEY_END = 2, STATKEY_SPD = 2, STATKEY_LCK = 0)
-	specstats_f = list(STATKEY_STR = -4, STATKEY_PER = -2, STATKEY_INT = -2, STATKEY_CON = -4, STATKEY_END = 2, STATKEY_SPD = 2, STATKEY_LCK = 0)
 
-	specstats_m = list(STATKEY_STR = 0, STATKEY_PER = 4, STATKEY_INT = 2, STATKEY_CON = -5, STATKEY_END = -1, STATKEY_SPD = 6, STATKEY_LCK = 3)
-	specstats_f = list(STATKEY_STR = 0, STATKEY_PER = 4, STATKEY_INT = 2, STATKEY_CON = -5, STATKEY_END = -1, STATKEY_SPD = 6, STATKEY_LCK = 3)
+	specstats_m = list(STATKEY_STR = -1, STATKEY_PER = 4, STATKEY_INT = 2, STATKEY_CON = -5, STATKEY_END = -1, STATKEY_SPD = 6, STATKEY_LCK = 3)
+	specstats_f = list(STATKEY_STR = -1, STATKEY_PER = 4, STATKEY_INT = 2, STATKEY_CON = -5, STATKEY_END = -1, STATKEY_SPD = 6, STATKEY_LCK = 3)
 
 	enflamed_icon = "widefire"
 

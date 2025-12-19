@@ -1,11 +1,6 @@
 /mob/living/carbon/human/species/faery
 	race = /datum/species/faery
-	if(patron = /datum/patron/divine/noc, /datum/patron/inhumen/zizo)
-		H.add_spell(/datum/action/cooldown/spell/undirected/touch/prestidigitation)
-		H.mana_pool?.set_intrinsic_recharge(MANA_ALL_LEYLINES)	
-		H.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
-		H.adjust_spell_points(4)
-if(biter.patron.type != /datum/patron/inhumen/graggar)
+
 /datum/species/faery
 	name = "Faery"
 	id = SPEC_ID_FAERY
@@ -151,30 +146,22 @@ if(biter.patron.type != /datum/patron/inhumen/graggar)
 
 /datum/species/seelie/get_skin_list()
 	return list(
-		//Change all of this to new skin or element colors
-		"Water" = SKIN_COLOR_WATER,
-		"Soil" = SKIN_COLOR_SOIL,
-		"Rock" = SKIN_COLOR_ROCK,
-		"Air" = SKIN_COLOR_AIR,
-		"Fire" = SKIN_COLOR_FIRE,
-		"Flora" = SKIN_COLOR_FLORA,
-		"Lightning" = SKIN_COLOR_ELECTRIC,
 		//Unseelie Fae
-		"Gloam-Touched" = SKIN_COLOR_GLOAM_TOUCHED,     // (Pale)
-		"Moon-Faded" = SKIN_COLOR_MOON_FADED,        // (White 1)
-		"Dusk-Cast" = SKIN_COLOR_DUSK_CAST,         // (Greyed White)
-		"Veilbound" = SKIN_COLOR_VEILBOUND,         // (Light Purple)
-		"Night-Suffused" = SKIN_COLOR_NIGHT_SUFFUSED,    // (Mid Purple)
-		"Umbral-Court" = SKIN_COLOR_UMBRAL_COURT,      // (Deep Purple)
-		"Starless" = SKIN_COLOR_STARLESS,          // (Blue-Black / Void)
+		"Unseelie — Gloam-Touched" = SKIN_COLOR_GLOAM_TOUCHED,     // (Pale)
+		"Unseelie — Moon-Faded" = SKIN_COLOR_MOON_FADED,        // (White 1)
+		"Unseelie — Dusk-Cast" = SKIN_COLOR_DUSK_CAST,         // (Greyed White)
+		"Unseelie — Veilbound" = SKIN_COLOR_VEILBOUND,         // (Light Purple)
+		"Unseelie — Night-Suffused" = SKIN_COLOR_NIGHT_SUFFUSED,    // (Mid Purple)
+		"Unseelie — Umbral" = SKIN_COLOR_UMBRAL_COURT,      // (Deep Purple)
+		"Unseelie — Starless" = SKIN_COLOR_STARLESS,          // (Blue-Black / Void)
 		//Seelie Fae
-		"Petal-Born" = SKIN_COLOR_PETAL_BORN,        // (Pale)
-		"Dawn-Kissed" = SKIN_COLOR_DAWN_KISSED,       // (White 1)
-		"Sunlit" = SKIN_COLOR_SUNLIT,            // (White 2)
-		"Golden-Bloomed" = SKIN_COLOR_GOLDEN_BLOOMED,    // (White 3)
-		"Meadow-Touched" = SKIN_COLOR_MEADOW_TOUCHED,    // (White 4)
-		"Heartblossom" = SKIN_COLOR_ROSY_COURT,        // (Pink)
-		"Heartblossom" = SKIN_COLOR_HEARTBLOSSOM,      // (Warm Pink / Latin)
+		"Seelie — Petal-Born" = SKIN_COLOR_PETAL_BORN,        // (Pale)
+		"Seelie — Dawn-Kissed" = SKIN_COLOR_DAWN_KISSED,       // (White 1)
+		"Seelie — Sunlit" = SKIN_COLOR_SUNLIT,            // (White 2)
+		"Seelie — Golden-Bloomed" = SKIN_COLOR_GOLDEN_BLOOMED,    // (White 3)
+		"Seelie — Meadow-Touched" = SKIN_COLOR_MEADOW_TOUCHED,    // (White 4)
+		"Seelie — Heartbound" = SKIN_COLOR_ROSY_COURT,        // (Pink)
+		"Seelie — Heartblossom" = SKIN_COLOR_HEARTBLOSSOM,      // (Latin) 
 		"Summer-Fey" = SKIN_COLOR_SUMMER_FEY,        // (Mediterranean)
 	)
 

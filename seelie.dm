@@ -21,7 +21,7 @@ if(biter.patron.type != /datum/patron/inhumen/graggar)
 	‣ The <b>Seelie Court</b> comprises faeries that seek help from others, warn those who have accidentally offended them, and return kindness with favors of their own. Still, a faery belonging to this court will avenge insults and could be prone to mischief.
 	‣ The <b>Unseelie Court</b> describes the darkly-inclined fairies. Unlike the Seelie Court, no offense was deemed necessary to bring down their assaults. They are seen as closely allied with Zizo.
 
-	skin_tone_wording = "Fey Court"
+	skin_tone_wording = "Court Attunement"
 
 	exotic_bloodtype = /datum/blood_type/fey
 
@@ -117,6 +117,17 @@ if(biter.patron.type != /datum/patron/inhumen/graggar)
 	C.set_mob_offsets("pixie_hover", _x = 0, _y = 10)
 	C.set_light(3, 1, "#d4fcac")
 
+    // Only grant magic if they worship Noc or Zizo
+    if (C.patron && (istype(C.patron, /datum/patron/divine/noc, /datum/patron/inhumen/zizo)))
+        // give prestidigitation 
+        C.add_spell(/datum/action/cooldown/spell/undirected/touch/prestidigitation)
+        // set the mana‑pool to recharge from all leylines
+        C.mana_pool?.set_intrinsic_recharge(MANA_ALL_LEYLINES)
+        // give rank 1 arcane magic
+        C.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
+        // give four extra spell‑points
+        C.adjust_spell_points(4)
+
 /datum/species/seelie/after_creation(mob/living/carbon/C)
 	..()
 	to_chat(C, "<span class='info'>I can speak Faexin with ,p before my speech.</span>")
@@ -148,6 +159,23 @@ if(biter.patron.type != /datum/patron/inhumen/graggar)
 		"Fire" = SKIN_COLOR_FIRE,
 		"Flora" = SKIN_COLOR_FLORA,
 		"Lightning" = SKIN_COLOR_ELECTRIC,
+		//Unseelie Fae
+		"Gloam-Touched" = SKIN_COLOR_GLOAM_TOUCHED,     // (Pale)
+		"Moon-Faded" = SKIN_COLOR_MOON_FADED,        // (White 1)
+		"Dusk-Cast" = SKIN_COLOR_DUSK_CAST,         // (Greyed White)
+		"Veilbound" = SKIN_COLOR_VEILBOUND,         // (Light Purple)
+		"Night-Suffused" = SKIN_COLOR_NIGHT_SUFFUSED,    // (Mid Purple)
+		"Umbral-Court" = SKIN_COLOR_UMBRAL_COURT,      // (Deep Purple)
+		"Starless" = SKIN_COLOR_STARLESS,          // (Blue-Black / Void)
+		//Seelie Fae
+		"Petal-Born" = SKIN_COLOR_PETAL_BORN,        // (Pale)
+		"Dawn-Kissed" = SKIN_COLOR_DAWN_KISSED,       // (White 1)
+		"Sunlit" = SKIN_COLOR_SUNLIT,            // (White 2)
+		"Golden-Bloomed" = SKIN_COLOR_GOLDEN_BLOOMED,    // (White 3)
+		"Meadow-Touched" = SKIN_COLOR_MEADOW_TOUCHED,    // (White 4)
+		"Heartblossom" = SKIN_COLOR_ROSY_COURT,        // (Pink)
+		"Heartblossom" = SKIN_COLOR_HEARTBLOSSOM,      // (Warm Pink / Latin)
+		"Summer-Fey" = SKIN_COLOR_SUMMER_FEY,        // (Mediterranean)
 	)
 
 /datum/species/seelie/get_hairc_list()

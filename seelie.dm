@@ -1,10 +1,9 @@
-/mob/living/carbon/human/species/seelie
-	race = /datum/species/seelie
-	gender = FEMALE
+/mob/living/carbon/human/species/faery
+	race = /datum/species/faery
 
-/datum/species/seelie
-	name = "Seelie"
-	id = "seelie"
+/datum/species/faery
+	name = "Faery"
+	id = SPEC_ID_FAERY
 	desc = "<b>Seelie</b><br>\
 	The smallest of Fae-folk, Seelie are a mysterious race and not well understood. \
     Parentless creatures and unable to reproduce naturally, it is clear that they do not propogate in a typical human way. \
@@ -15,21 +14,24 @@
 
 	skin_tone_wording = "Elemental Connection"
 
-	//gender = FEMALE
-	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY)	//Default shit that ever race gets
-	inherent_traits = list(TRAIT_NOMOBSWAP, TRAIT_NOFALLDAMAGE2, TRAIT_TINY)	//Use this to add custom Fae traits
-	default_features = MANDATORY_FEATURE_LIST
+	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,OLDGREY)	//Default shit that every race gets
+	inherent_traits = list(TRAIT_NOMOBSWAP, TRAIT_NOFALLDAMAGE2, TRAIT_TINY, TRAIT_EMPATH, TRAIT_COIN_ILLITERATE, TRAIT_SEE_LEYLINES)	//Use this to add custom Fae traits
+	//default_features = MANDATORY_FEATURE_LIST
+
 	use_skintones = 1
-	skinned_type = /obj/item/stack/sheet/animalhide/human
 	disliked_food = NONE
 	liked_food = NONE
-	possible_ages = ALL_AGES_LIST
-	limbs_icon_m = 'icons/roguetown/mob/bodies/f/fm.dmi'		//CHANGE THESE TO NEW SPRITEWORK
-	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fm.dmi'		//All fairies are technically female in code, but are genderless in lore
-	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
-	dam_icon_f = 'icons/roguetown/mob/bodies/dam/dam_female.dmi'
-	soundpack_m = /datum/voicepack/female/elf
+	possible_ages = ALL_AGES_LIST_CHILD
+
+	limbs_icon_m = 'icons/roguetown/mob/bodies/c/child.dmi'		//CHANGE THESE TO NEW SPRITEWORK
+	limbs_icon_f = 'icons/roguetown/mob/bodies/c/child.dmi'		//All fairies are technically female in code, but are genderless in lore
+
+	native_language = "Faexin"
+
+	soundpack_m = /datum/voicepack/male/elf
 	soundpack_f = /datum/voicepack/female/elf
+
+//CHANGE TO species.offset_features_child https://github.com/Monkestation/Vanderlin/blob/f60f3e2238f3d53793feabc3cc34bfb9fee233c2/code/modules/mob/living/carbon/human/species.dm#L88
 	offset_features = list(
 		OFFSET_ID = list(0,1), OFFSET_GLOVES = list(0,1), OFFSET_WRISTS = list(0,1),\
 		OFFSET_CLOAK = list(0,1), OFFSET_FACEMASK = list(0,1), OFFSET_HEAD = list(0,1), \
@@ -42,15 +44,14 @@
 		OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
 		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0), \
 		)
-	specstats = list(
-		"perception" = 4,
-		"intelligence" = 2,
-		"constitution" = -6,
-		"endurance" = -1,
-		"speed" = 7,
-		"fortune" = 2
-		)
+	specstats_m = list(STATKEY_STR = -4, STATKEY_PER = -2, STATKEY_INT = -2, STATKEY_CON = -4, STATKEY_END = 2, STATKEY_SPD = 2, STATKEY_LCK = 0)
+	specstats_f = list(STATKEY_STR = -4, STATKEY_PER = -2, STATKEY_INT = -2, STATKEY_CON = -4, STATKEY_END = 2, STATKEY_SPD = 2, STATKEY_LCK = 0)
+
+	specstats_m = list(STATKEY_STR = 0, STATKEY_PER = 4, STATKEY_INT = 2, STATKEY_CON = -5, STATKEY_END = -1, STATKEY_SPD = 6, STATKEY_LCK = 3)
+	specstats_f = list(STATKEY_STR = 0, STATKEY_PER = 4, STATKEY_INT = 2, STATKEY_CON = -5, STATKEY_END = -1, STATKEY_SPD = 6, STATKEY_LCK = 3)
+
 	enflamed_icon = "widefire"
+
 	organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
 		ORGAN_SLOT_HEART = /obj/item/organ/heart,
@@ -61,81 +62,26 @@
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
 		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
 		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
+		ORGAN_SLOT_GUTS = /obj/item/organ/guts,
 		//ADD WINGS HERE
-		ORGAN_SLOT_WINGS = /obj/item/organ/wings/seelie,
+		ORGAN_SLOT_WINGS = /obj/item/organ/wings/flight/seelie,
 		)
 	bodypart_features = list(
 		/datum/bodypart_feature/hair/head,
 		///datum/bodypart_feature/hair/facial, //I think remove facial hair as all seelie are genderless female centric
 	)
 	customizers = list(
+		/datum/customizer/organ/ears/elf,
 		/datum/customizer/organ/eyes/humanoid,
 		/datum/customizer/bodypart_feature/hair/head/humanoid,
 		/datum/customizer/bodypart_feature/hair/facial/humanoid,
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,
-		/datum/customizer/organ/tail/anthro,
-		/datum/customizer/organ/tail_feature/anthro,
-		/datum/customizer/organ/snout/anthro,
-		/datum/customizer/organ/ears/anthro,
-		/datum/customizer/organ/horns/anthro,
-		/datum/customizer/organ/frills/anthro,
 		/datum/customizer/organ/wings/seelie,
-		/datum/customizer/organ/neck_feature/anthro,
-		/datum/customizer/organ/testicles/anthro,
-		/datum/customizer/organ/penis/anthro,
-		/datum/customizer/organ/breasts/animal,
-		/datum/customizer/organ/vagina/anthro,
-	)
-
-	body_marking_sets = list(
-		/datum/body_marking_set/none,
-		/datum/body_marking_set/belly,
-		/datum/body_marking_set/bellysocks,
-		/datum/body_marking_set/tiger,
-		/datum/body_marking_set/tiger_dark,
 	)
 
 	body_markings = list(
-		/datum/body_marking/flushed_cheeks,
-		/datum/body_marking/eyeliner,
-		/datum/body_marking/plain,
-		/datum/body_marking/fox,
-		/datum/body_marking/wolf,
-		/datum/body_marking/tiger,
-		/datum/body_marking/tiger/dark,
-		/datum/body_marking/sock,
-		/datum/body_marking/socklonger,
-		/datum/body_marking/tips,
-		/datum/body_marking/bellyscale,
-		/datum/body_marking/bellyscaleslim,
-		/datum/body_marking/bellyscalesmooth,
-		/datum/body_marking/bellyscaleslimsmooth,
-		/datum/body_marking/buttscale,
-		/datum/body_marking/belly,
-		/datum/body_marking/bellyslim,
-		/datum/body_marking/butt,
-		/datum/body_marking/tie,
-		/datum/body_marking/tiesmall,
-		/datum/body_marking/backspots,
-		/datum/body_marking/front,
-		/datum/body_marking/drake_eyes,
 		/datum/body_marking/tonage,
-		/datum/body_marking/spotted,
-	)
-
-	descriptor_choices = list(
-		/datum/descriptor_choice/height,
-		/datum/descriptor_choice/body,
-		/datum/descriptor_choice/stature,
-		/datum/descriptor_choice/face,
-		/datum/descriptor_choice/face_exp,
-		/datum/descriptor_choice/skin_all,
-		/datum/descriptor_choice/voice,
-		/datum/descriptor_choice/prominent_one_wild,
-		/datum/descriptor_choice/prominent_two_wild,
-		/datum/descriptor_choice/prominent_three_wild,
-		/datum/descriptor_choice/prominent_four_wild,
 	)
 
 	languages = list(

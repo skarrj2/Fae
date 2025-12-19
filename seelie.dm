@@ -1,22 +1,35 @@
 /mob/living/carbon/human/species/faery
 	race = /datum/species/faery
+	if(!H.patron && istype(H.patron, /datum/patron/divine/noc, /datum/patron/inhumen/zizo)
+		H.add_spell(/datum/action/cooldown/spell/undirected/touch/prestidigitation)
+		H.mana_pool?.set_intrinsic_recharge(MANA_ALL_LEYLINES)	
+		H.add_spell(/datum/action/cooldown/spell/undirected/touch/prestidigitation)
+		H.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
+		H.adjust_spell_points(2)
 
 /datum/species/faery
 	name = "Faery"
 	id = SPEC_ID_FAERY
-	desc = "<b>Seelie</b><br>\
-	The smallest of Fae-folk, Seelie are a mysterious race and not well understood. \
-    Parentless creatures and unable to reproduce naturally, it is clear that they do not propogate in a typical human way. \
-    Instead, Seelie tend to appear and gather in places of chaos and misfortune, thriving in such an environment. \
-    Seelie are known to have Elemental Attunements, an influence of nature that mystically sprung them into existance. \
-    Any tribalism or history regarding the race is scarce and uncommmon, and as such misconception and myth surrounds them. \
-    The wary traveller should take heed of such beings, as both fortune and missery is said to accompany the little troublemakers."
+	desc = "Born of old elven blood and fae blessings, faeries are the smaller, wilder and whimsical descendants of elves blessed with insectile wings by Dendor. \
+	Though most faeries believe Xylix favors them, whether or not anyone else agrees. \
+	Faeries are, at their core, elvish, nomadic tricksters with insectile wings and a strong sense of performance. \
+	They tend to speak in riddles, half-truths, and playful insults. \
+	They like to offer deals and bargains, with obvious loopholes to anyone actually paying attention. \
+	Their morality tends to be situational and filtered through humor. \
+	A faery might steal from a noble to feed a peasant, and then steal from the peasant “just a little”. \
+	Elves are your smugger cousins: some faeries adore them, some resent them, most mock them. \
+	Decide if your faery views elves as “the boring branch of the family” or as lost kin who forgot how to have fun."
 
 	skin_tone_wording = "Elemental Connection"
 
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,OLDGREY)	//Default shit that every race gets
-	inherent_traits = list(TRAIT_NOMOBSWAP, TRAIT_NOFALLDAMAGE2, TRAIT_TINY, TRAIT_EMPATH, TRAIT_COIN_ILLITERATE, TRAIT_SEE_LEYLINES)	//Use this to add custom Fae traits
+	inherent_traits = list(TRAIT_NOMOBSWAP, TRAIT_NOFALLDAMAGE2, TRAIT_TINY, TRAIT_EMPATH, TRAIT_COIN_ILLITERATE, TRAIT_DODGEEXPERT, TRAIT_HOLLOWBONES)	//Use this to add custom Fae traits
 	//default_features = MANDATORY_FEATURE_LIST
+	inherent_skills = list(
+		/datum/skill/misc/sneaking = 3,
+		/datum/skill/misc/stealing = 1,
+		/datum/skill/labor/taming = 2,
+)
 
 	use_skintones = 1
 	disliked_food = NONE

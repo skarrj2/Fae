@@ -1,9 +1,8 @@
 /mob/living/carbon/human/species/faery
 	race = /datum/species/faery
-	if(!H.patron && istype(H.patron, /datum/patron/divine/noc, /datum/patron/inhumen/zizo)
+	if(patron = /datum/patron/divine/noc, /datum/patron/inhumen/zizo)
 		H.add_spell(/datum/action/cooldown/spell/undirected/touch/prestidigitation)
 		H.mana_pool?.set_intrinsic_recharge(MANA_ALL_LEYLINES)	
-		H.add_spell(/datum/action/cooldown/spell/undirected/touch/prestidigitation)
 		H.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
 		H.adjust_spell_points(4)
 if(biter.patron.type != /datum/patron/inhumen/graggar)

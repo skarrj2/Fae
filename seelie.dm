@@ -5,7 +5,7 @@
 		H.mana_pool?.set_intrinsic_recharge(MANA_ALL_LEYLINES)	
 		H.add_spell(/datum/action/cooldown/spell/undirected/touch/prestidigitation)
 		H.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
-		H.adjust_spell_points(2)
+		H.adjust_spell_points(4)
 
 /datum/species/faery
 	name = "Faery"

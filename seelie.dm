@@ -19,7 +19,7 @@ if(biter.patron.type != /datum/patron/inhumen/graggar)
 	Elves are your smugger cousins: some faeries adore them, some resent them, most mock them. \
 	Decide if your faery views elves as “the boring branch of the family” or as lost kin who forgot how to have fun.\\
 	‣ The <b>Seelie Court</b> comprises faeries that seek help from others, warn those who have accidentally offended them, and return kindness with favors of their own. Still, a faery belonging to this court will avenge insults and could be prone to mischief.
-	‣ The <b>Unseelie Court</b> describes the darkly-inclined fairies. Unlike the Seelie Court, no offense was deemed necessary to bring down their assaults. They are seen as closely allied with Zizo.
+	‣ The <b>Unseelie Court</b> describes the darkly-inclined fairies. Unlike the Seelie Court, no offense was deemed necessary to bring down their assaults. They are seen as closely allied with Zizo."
 
 	skin_tone_wording = "Court Attunement"
 

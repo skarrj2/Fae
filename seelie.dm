@@ -22,6 +22,8 @@
 
 	skin_tone_wording = "Elemental Connection"
 
+	exotic_bloodtype = /datum/blood_type/fey
+
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,OLDGREY)	//Default shit that every race gets
 	inherent_traits = list(TRAIT_NOMOBSWAP, TRAIT_NOFALLDAMAGE2, TRAIT_TINY, TRAIT_EMPATH, TRAIT_COIN_ILLITERATE, TRAIT_DODGEEXPERT, TRAIT_HOLLOWBONES)	//Use this to add custom Fae traits
 	//default_features = MANDATORY_FEATURE_LIST

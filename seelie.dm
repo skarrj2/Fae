@@ -15,11 +15,11 @@ if(biter.patron.type != /datum/patron/inhumen/graggar)
 	They tend to speak in riddles, half-truths, and playful insults. \
 	They like to offer deals and bargains, with obvious loopholes to anyone actually paying attention. \
 	Their morality tends to be situational and filtered through humor. \
-	A faery might steal from a noble to feed a peasant, and then steal from the peasant “just a little”. \
+	A faery might steal from a noble to feed a peasant, and then steal from the peasant <i>“just a little”</i>. \
 	Elves are your smugger cousins: some faeries adore them, some resent them, most mock them. \
-	Decide if your faery views elves as “the boring branch of the family” or as lost kin who forgot how to have fun.\
-	‣ The Seelie Court comprises faeries that seek help from others, warn those who have accidentally offended them, and return kindness with favors of their own. Still, a faery belonging to this court will avenge insults and could be prone to mischief.\
-	‣ The Unseelie Court describes the darkly-inclined fairies. Unlike the Seelie Court, no offense was deemed necessary to bring down their assaults. They are seen as closely allied with Zizo."
+	Decide if your faery views elves as <i>“the boring branch of the family”</i> or as lost kin who forgot how to have fun.\
+	‣ The <b>Seelie Court</b> comprises faeries that seek help from others, warn those who have accidentally offended them, and return kindness with favors of their own. Still, a faery belonging to this court will avenge insults and could be prone to mischief.\
+	‣ The <b>Unseelie Court</b> describes the darkly-inclined fairies. Unlike the Seelie Court, no offense was deemed necessary to bring down their assaults. They are seen as closely allied with Zizo."
 
 	skin_tone_wording = "Court Attunement"
 

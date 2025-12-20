@@ -152,7 +152,7 @@
 		"Unseelie — Dusk-Cast" = SKIN_COLOR_DUSK_CAST,         // (Greyed White)
 		"Unseelie — Veilbound" = SKIN_COLOR_VEILBOUND,         // (Light Purple)
 		"Unseelie — Night-Suffused" = SKIN_COLOR_NIGHT_SUFFUSED,    // (Mid Purple)
-		"Unseelie — Umbral" = SKIN_COLOR_UMBRAL_COURT,      // (Deep Purple)
+		"Unseelie — Umbral" = SKIN_COLOR_UMBRAL,      // (Deep Purple)
 		"Unseelie — Starless" = SKIN_COLOR_STARLESS,          // (Blue-Black / Void)
 		//Seelie Fae
 		"Seelie — Petal-Born" = SKIN_COLOR_PETAL_BORN,        // (Pale)
@@ -162,7 +162,9 @@
 		"Seelie — Meadow-Touched" = SKIN_COLOR_MEADOW_TOUCHED,    // (White 4)
 		"Seelie — Heartbound" = SKIN_COLOR_ROSY_COURT,        // (Pink)
 		"Seelie — Heartblossom" = SKIN_COLOR_HEARTBLOSSOM,      // (Latin) 
-		"Summer-Fey" = SKIN_COLOR_SUMMER_FEY,        // (Mediterranean)
+		"Seelie — Summerkin" = SKIN_COLOR_SUMMER_FEY,        // (Mediterranean)
+		"Seelie — Sun-Touched" = SKIN_COLOR_SUN_TOUCHED,      // (Latin) 
+
 	)
 
 /datum/species/seelie/get_hairc_list()

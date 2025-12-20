@@ -56,8 +56,8 @@
 		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0), \
 		)
 
-	specstats_m = list(STATKEY_STR = -1, STATKEY_PER = 4, STATKEY_INT = 2, STATKEY_CON = -5, STATKEY_END = -1, STATKEY_SPD = 6, STATKEY_LCK = 3)
-	specstats_f = list(STATKEY_STR = -1, STATKEY_PER = 4, STATKEY_INT = 2, STATKEY_CON = -5, STATKEY_END = -1, STATKEY_SPD = 6, STATKEY_LCK = 3)
+	specstats_m = list(STATKEY_STR = -2, STATKEY_PER = 4, STATKEY_INT = 2, STATKEY_CON = -5, STATKEY_END = -1, STATKEY_SPD = 6, STATKEY_LCK = 3)
+	specstats_f = list(STATKEY_STR = -2, STATKEY_PER = 4, STATKEY_INT = 2, STATKEY_CON = -5, STATKEY_END = -1, STATKEY_SPD = 6, STATKEY_LCK = 3)
 
 	enflamed_icon = "widefire"
 
